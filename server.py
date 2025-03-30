@@ -12,6 +12,10 @@ load_dotenv()
 # Initialize Flask app
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "Backend is running!"
+    
 # Load existing itinerary
 @app.route('/api/itinerary', methods=['GET'])
 def get_itinerary():
@@ -165,4 +169,5 @@ def generate_itinerary():
 
 # Run the Flask app
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  
+    app.run(host="0.0.0.0", port=port, debug=True)  
