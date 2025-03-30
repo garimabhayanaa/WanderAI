@@ -552,7 +552,7 @@ if "itinerary" in st.session_state:
                 
                 if isinstance(day_info, dict):
                     pdf.set_font("Arial", "B", 12)
-                    pdf.cell(200, 10, f"Budget: ${sanitize(day_info.get('budget', 'N/A'))}", ln=True, align="L")
+                    pdf.cell(200, 10, f"Budget: {sanitize(day_info.get('budget', 'N/A'))}", ln=True, align="L")
                     pdf.cell(200, 10, f"Transport: {sanitize(day_info.get('transport', 'N/A'))}", ln=True, align="L")
                     
                     pdf.set_font("Arial", "", 12)
