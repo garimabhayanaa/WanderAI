@@ -10,7 +10,7 @@ import datetime
 import google.generativeai as genai
 
 
-API_URL = "http://127.0.0.1:5000/api/itinerary"  # Flask API endpoint
+API_URL = "https://wanderai-wd12.onrender.com/api/itinerary"  # Flask API endpoint
 UNSPLASH_API_KEY = os.getenv('UNSPLASH_ACCESS_KEY')
 OPENWEATHER_API_KEY = os.getenv('OPENWEATHER_API_KEY')
 
