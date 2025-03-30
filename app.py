@@ -230,6 +230,21 @@ st.markdown("""
         border-top: 1px solid #e0e6ed;
         color: #7f8fa4;
     }
+
+    .stSelectbox > div > div > div > div {
+    color: #2c3e50 !important; /* Dark blue/gray color that matches your theme */
+    }
+    
+    .stSelectbox svg {
+        color: #2c3e50 !important;
+        fill: #2c3e50 !important;
+    }
+
+    /* Target the specific SVG path for the dropdown arrow */
+    .stSelectbox path {
+        stroke: #2c3e50 !important;
+        fill: #2c3e50 !important;
+    }
     
     /* Responsive adjustments */
     @media (max-width: 768px) {
@@ -514,7 +529,7 @@ if "itinerary" in st.session_state:
                     pdf.cell(200, 10, sanitize(day["day"]), ln=True, align="L")
                     
                     pdf.set_font("Arial", "B", 12)
-                    pdf.cell(200, 10, f"Budget: ${sanitize(day.get('budget', 'N/A'))}", ln=True, align="L")
+                    pdf.cell(200, 10, f"Budget: {sanitize(day.get('budget', 'N/A'))}", ln=True, align="L")
                     pdf.cell(200, 10, f"Transport: {sanitize(day.get('transport', 'N/A'))}", ln=True, align="L")
                     
                     pdf.set_font("Arial", "", 12)
@@ -678,16 +693,12 @@ if ask_button:
     if user_query:
         with st.spinner("Thinking..."):
             response = ask_gemini(user_query)
-            
-            st.markdown("""
+            st.markdown(f"""
             <div class="card" style="margin-top:20px;">
                 <h4 style="margin-top:0;color:#3a7bd5;font-weight:600;">AI's Response:</h4>
-                <div style="background-color:#f8faff;padding:16px;border-radius:8px;margin-top:10px;border-left:4px solid #3a7bd5;">
-            """, unsafe_allow_html=True)
+                <p> {response} </p>
+            </div>""", unsafe_allow_html=True)
             
-            st.write(response)
-            
-            st.markdown("</div></div>", unsafe_allow_html=True)
     else:
         st.warning("⚠️ Please enter a question.")
 
