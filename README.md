@@ -67,11 +67,8 @@ streamlit run app.py
 ## Deployment Guide
 ### Deploy Backend on Render
 #### Push your code to GitHub.
-
 #### Go to Render and create a new Web Service.
-
 #### Connect your GitHub repository.
-
 #### Set the Start Command as:
 ```bash
 python server.py
@@ -80,11 +77,8 @@ python server.py
 
 ### Deploy Frontend on Streamlit Cloud
 #### Go to Streamlit Cloud.
-
 #### Create a new app and connect your GitHub repository.
-
 #### Set the Main File Path to app.py.
-
 #### Deploy & share the app link! 🚀
 
 ## Contributing
