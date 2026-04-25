@@ -675,7 +675,7 @@ st.markdown("""
 
 def ask_gemini(question):
     try:
-        model = genai.GenerativeModel("gemini-2.0-flash")  
+        model = genai.GenerativeModel("gemini-2.5-flash")  
         response = model.generate_content(question)
         return response.text.strip()
     except Exception as e:
