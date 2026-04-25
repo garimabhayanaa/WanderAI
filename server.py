@@ -29,7 +29,7 @@ def get_itinerary():
 # Function to call Gemini API using requests
 def generate_content(prompt):
     api_key = os.getenv('GEMINI_API_KEY')
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
     
     # Prepare the request payload according to the API documentation
     payload = {
